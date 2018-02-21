@@ -33,3 +33,4 @@ or
 npm run start
 ```
 
+Then you can navigate to [http://multisite1.local:3000](http://multisite1.local:3000) and [http://multisite2.local:3000](http://multisite2.local:3000) to view the different demo sites.
