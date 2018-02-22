@@ -1,15 +1,17 @@
-var express = require('express');
-var path = require('path');
+import express from 'express'
+import path from 'path'
 
-module.exports = (config) => {
-  var app = express();
+import index from './routes/index'
+import pokemon from './routes/pokemon'
 
-  var index = require('./routes/index');
-  
-  app.set('views', path.join(__dirname, 'views'));
-  app.set('view engine', 'pug');
+export default (config) => {
+  const app = express()
 
-  app.use('/', index);
-  
-  return app;
+  app.set('views', path.join(__dirname, 'views'))
+  app.set('view engine', 'pug')
+
+  app.use('/', index)
+  app.use('/pokemon', pokemon)
+
+  return app
 }

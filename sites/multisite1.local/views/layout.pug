@@ -56,18 +56,21 @@ html(lang="en")
 		block styles
 			link(href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", crossorigin="anonymous")
 			link(href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css", rel="stylesheet", integrity="sha384-a1fJ5ppVJ3J5OscI8CmYpZH6XRnafYX7sXnA9uVadDWXox/IU9IIk9zz5zNE5HPL", crossorigin="anonymous")
-	body(data-spy="scroll",data-target=".scrollspy")
-		nav.navbar.navbar-toggleable-md.navbar-inverse.fixed-top.bg-primary
-			
-			button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation")
-				span.navbar-toggler-icon
-			
-			a.navbar-brand(href="#" style="color: white") Navbar
+			link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
 
-			div.collapse.navbar-collapse
+	- var items = [ ['', 'Home'], ['pokemon', 'Pokemon']]
+
+	body(data-spy="scroll",data-target=".scrollspy")
+
+		nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+			a.navbar-brand(href="/") Multisite 1
+			
+			.collapse.navbar-collapse#navbarCollapse
 				ul.navbar-nav.mr-auto
-					li.nav-item.active
-						a.nav-link(href="#") Home
+					for item in items
+						li(class=current == item[1] ? 'nav-item active' : 'nav-item')
+							a.nav-link(href="/" + item[0])= item[1]
+
 		block content
 			
 		block scripts

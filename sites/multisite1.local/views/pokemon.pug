@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div.container-fluid(style="padding-top: 5em")
+    h1 #{title}
+
+    table.table.table-striped
+      thead.thead-dark
+        tr
+          th Name
+          th HP
+          th Attack
+          th Defense
+          th Special Attack
+          th Special Defense
+      each mon, i in pokemon
+        tr
+          td #{mon.title}
+          td #{mon.hp}
+          td #{mon.attack}
+          td #{mon.defense}
+          td #{mon.special_attack}
+          td #{mon.special_defense}

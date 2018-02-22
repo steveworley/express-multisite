@@ -1,8 +1,0 @@
-{
-  "multisite1.local": {
-    "publicDir": "public/multisite1.local"
-  },
-  "multisite2.local": {
-    "publicDir": "public/multisite2.local"    
-  }
-}

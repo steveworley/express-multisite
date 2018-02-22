@@ -1,8 +1,8 @@
-var express = require('express');
-var path = require('path');
+import express from 'express'
+import path from 'path'
 
-module.exports = (config, app) => {
-  var app = express();
+export default (config) => {
+  const app = express();
 
   app.set('views', path.join(__dirname, 'views'))
   app.set('view engine', 'pug')
